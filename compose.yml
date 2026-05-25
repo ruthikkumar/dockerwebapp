@@ -20,7 +20,7 @@ services:
      - "devopsdb"
    networks:
       - mynetwork
-network:
+networks:
    mynetwork:
       driver: overlay
 
