@@ -7,6 +7,8 @@ services:
      - "3306:3306"
    deploy:
       replicas: 3
+   networks:
+      - mynetwork
 
  application:
    image: ruthikrampalli/automation:app
@@ -16,3 +18,10 @@ services:
       replicas: 3
    depends_on:
      - "devopsdb"
+   networks:
+      - mynetwork
+network:
+   mynetwork:
+      driver: overlay
+
+ 
